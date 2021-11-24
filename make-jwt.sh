@@ -12,4 +12,4 @@ JWT_ENC_PAYLOAD=$(echo -n $JWT_PAYLOAD | base64 | tr '/+' '_-')
 JWT_DATA="$JWT_ENC_HEADER.$JWT_ENC_PAYLOAD"
 JWT_SIG=$(echo -n $JWT_DATA | openssl sha256 -sign "pk.pem" | base64 | tr '/+' '_-' | tr -d '\n')
 
-echo "$JWT_DATA.$JWT_SIG"
+echo -n "$JWT_DATA.$JWT_SIG"

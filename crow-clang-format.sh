@@ -17,7 +17,7 @@
 
 #$1 is URL, $2 is token, $3 is data
 ghSend() {
-    curl -s --trace - \
+    curl -s \
   -X POST \
   -H "Accept: application/vnd.github.v3+json" \
   -H "Authorization: Bearer $2" \
